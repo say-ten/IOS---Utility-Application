@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  StopwatchViewController.swift
 //  Utility Application
 //
 //  Created by USER on 1/5/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class StopwatchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

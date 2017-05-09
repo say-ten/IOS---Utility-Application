@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		CE459C541EB7258700A0BE74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE459C531EB7258700A0BE74 /* AppDelegate.swift */; };
-		CE459C561EB7258700A0BE74 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE459C551EB7258700A0BE74 /* FirstViewController.swift */; };
-		CE459C581EB7258700A0BE74 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE459C571EB7258700A0BE74 /* SecondViewController.swift */; };
+		CE459C561EB7258700A0BE74 /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE459C551EB7258700A0BE74 /* StopwatchViewController.swift */; };
+		CE459C581EB7258700A0BE74 /* MediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE459C571EB7258700A0BE74 /* MediaPlayerViewController.swift */; };
 		CE459C5B1EB7258700A0BE74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE459C591EB7258700A0BE74 /* Main.storyboard */; };
 		CE459C5D1EB7258700A0BE74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE459C5C1EB7258700A0BE74 /* Assets.xcassets */; };
 		CE459C601EB7258700A0BE74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE459C5E1EB7258700A0BE74 /* LaunchScreen.storyboard */; };
+		CE90B90F1EC16B5F00D5281A /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B90E1EC16B5F00D5281A /* CalculatorViewController.swift */; };
+		CE90B9111EC16BB400D5281A /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B9101EC16BB400D5281A /* NotesViewController.swift */; };
+		CE90B9131EC16BDA00D5281A /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B9121EC16BDA00D5281A /* TimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE459C501EB7258700A0BE74 /* Utility Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Utility Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE459C531EB7258700A0BE74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE459C551EB7258700A0BE74 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		CE459C571EB7258700A0BE74 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		CE459C551EB7258700A0BE74 /* StopwatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
+		CE459C571EB7258700A0BE74 /* MediaPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewController.swift; sourceTree = "<group>"; };
 		CE459C5A1EB7258700A0BE74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE459C5C1EB7258700A0BE74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE459C5F1EB7258700A0BE74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE459C611EB7258700A0BE74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE90B90E1EC16B5F00D5281A /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		CE90B9101EC16BB400D5281A /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		CE90B9121EC16BDA00D5281A /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				CE459C531EB7258700A0BE74 /* AppDelegate.swift */,
-				CE459C551EB7258700A0BE74 /* FirstViewController.swift */,
-				CE459C571EB7258700A0BE74 /* SecondViewController.swift */,
+				CE459C551EB7258700A0BE74 /* StopwatchViewController.swift */,
+				CE90B90E1EC16B5F00D5281A /* CalculatorViewController.swift */,
+				CE90B9101EC16BB400D5281A /* NotesViewController.swift */,
+				CE90B9121EC16BDA00D5281A /* TimerViewController.swift */,
+				CE459C571EB7258700A0BE74 /* MediaPlayerViewController.swift */,
 				CE459C591EB7258700A0BE74 /* Main.storyboard */,
 				CE459C5C1EB7258700A0BE74 /* Assets.xcassets */,
 				CE459C5E1EB7258700A0BE74 /* LaunchScreen.storyboard */,
@@ -139,9 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE459C581EB7258700A0BE74 /* SecondViewController.swift in Sources */,
+				CE459C581EB7258700A0BE74 /* MediaPlayerViewController.swift in Sources */,
+				CE90B9111EC16BB400D5281A /* NotesViewController.swift in Sources */,
 				CE459C541EB7258700A0BE74 /* AppDelegate.swift in Sources */,
-				CE459C561EB7258700A0BE74 /* FirstViewController.swift in Sources */,
+				CE90B90F1EC16B5F00D5281A /* CalculatorViewController.swift in Sources */,
+				CE90B9131EC16BDA00D5281A /* TimerViewController.swift in Sources */,
+				CE459C561EB7258700A0BE74 /* StopwatchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +317,7 @@
 				CE459C661EB7258700A0BE74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
