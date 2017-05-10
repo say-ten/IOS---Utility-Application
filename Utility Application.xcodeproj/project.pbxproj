@@ -16,6 +16,7 @@
 		CE90B90F1EC16B5F00D5281A /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B90E1EC16B5F00D5281A /* CalculatorViewController.swift */; };
 		CE90B9111EC16BB400D5281A /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B9101EC16BB400D5281A /* NotesViewController.swift */; };
 		CE90B9131EC16BDA00D5281A /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90B9121EC16BDA00D5281A /* TimerViewController.swift */; };
+		CEB92DF11EC2CC53008DED35 /* alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEB92DF01EC2CC53008DED35 /* alert.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CE90B90E1EC16B5F00D5281A /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		CE90B9101EC16BB400D5281A /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		CE90B9121EC16BDA00D5281A /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		CEB92DF01EC2CC53008DED35 /* alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alert.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				CE459C571EB7258700A0BE74 /* MediaPlayerViewController.swift */,
 				CE459C591EB7258700A0BE74 /* Main.storyboard */,
 				CE459C5C1EB7258700A0BE74 /* Assets.xcassets */,
+				CEB92DF01EC2CC53008DED35 /* alert.wav */,
 				CE459C5E1EB7258700A0BE74 /* LaunchScreen.storyboard */,
 				CE459C611EB7258700A0BE74 /* Info.plist */,
 			);
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE459C601EB7258700A0BE74 /* LaunchScreen.storyboard in Resources */,
+				CEB92DF11EC2CC53008DED35 /* alert.wav in Resources */,
 				CE459C5D1EB7258700A0BE74 /* Assets.xcassets in Resources */,
 				CE459C5B1EB7258700A0BE74 /* Main.storyboard in Resources */,
 			);

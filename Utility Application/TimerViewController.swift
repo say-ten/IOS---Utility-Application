@@ -14,9 +14,16 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let sound = Bundle.main.path(forResource: "alert", ofType: ".mp3")
-        try audioPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
-    }
+        do
+        {
+            let sound = Bundle.main.path(forResource: "alert", ofType: ".wav")
+            try audioPlayer = AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+        }
+        catch
+        {
+            print ("error")
+        }
+            }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -26,6 +33,7 @@ class TimerViewController: UIViewController {
     var second = 60
     var timer = Timer()
     var audioPlayer = AVAudioPlayer()
+    stopButton.isHidden = true
     
     @IBOutlet weak var time: UILabel!
     
@@ -33,21 +41,22 @@ class TimerViewController: UIViewController {
     @IBAction func slide(_ sender: UISlider)
     {
         second = Int(sender.value)
-        time.text = String(second) + "Seconds"
+        time.text = String(second)
     }
     
     @IBOutlet weak var startButton: UIButton!
     @IBAction func start(_ sender: AnyObject)
     {
         timer = Timer .scheduledTimer(timeInterval: 1, target: self, selector: #selector(TimerViewController.counter), userInfo: nil, repeats: true)
-        slider.isHidden = true
+        slider.isEnabled = false
         startButton.isHidden = true
+        stopButton.isHidden = false
     }
     
     func counter()
     {
         second -= 1
-        time.text = String(second) + "Seconds"
+        time.text = String(second)
         if (second == 0)
         {
             timer.invalidate()
@@ -59,11 +68,12 @@ class TimerViewController: UIViewController {
     @IBAction func stop(_ sender: AnyObject)
     {
         timer.invalidate()
-        second = 30
-        slider.setValue(30, animated: true)
-        time.text = "30 Seconds"
+        second = 60
+        slider.setValue(60, animated: true)
+        time.text = "60"
         audioPlayer.stop()
-        slider.isHidden = false
+        slider.isEnabled = true
         startButton.isHidden = false
+        stopButton.isHidden = true
     }
 }
