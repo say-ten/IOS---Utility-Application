@@ -23,7 +23,9 @@ class TimerViewController: UIViewController {
         {
             print ("error")
         }
-            }
+        stopButton.isHidden = true
+        slider.setValue(60, animated: true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -33,7 +35,6 @@ class TimerViewController: UIViewController {
     var second = 60
     var timer = Timer()
     var audioPlayer = AVAudioPlayer()
-    stopButton.isHidden = true
     
     @IBOutlet weak var time: UILabel!
     
