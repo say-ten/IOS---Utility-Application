@@ -253,7 +253,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calculator" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" image="Calculator" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="label" destination="zbo-25-Ctd" id="sW0-ao-oAp"/>
                     </connections>
@@ -316,7 +316,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Timer" id="zoj-kr-IF7"/>
+                    <tabBarItem key="tabBarItem" title="Timer" image="Timer" id="zoj-kr-IF7"/>
                     <connections>
                         <outlet property="slider" destination="WTA-Cc-jXh" id="SFH-yy-q5z"/>
                         <outlet property="startButton" destination="DqI-Dk-RE6" id="4kn-rT-iJe"/>
@@ -341,7 +341,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Notes" id="XPh-bi-9Yd"/>
+                    <tabBarItem key="tabBarItem" title="Notes" image="Notes" id="XPh-bi-9Yd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5u-dY-VS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -361,7 +361,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stopwatch" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="Stopwatch" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -405,14 +405,16 @@
                                 <rect key="frame" x="91" y="533" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="rewind"/>
+                                <connections>
+                                    <action selector="rewindAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="gtp-Iu-lr9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9V-Yl-FiL">
                                 <rect key="frame" x="141" y="533" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="pause"/>
                                 <connections>
-                                    <action selector="playAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="aPh-Zz-XH3"/>
-                                    <action selector="rewindAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="WZd-w1-wd4"/>
+                                    <action selector="pauseAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="XP7-CF-pvy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTK-B6-ITO">
@@ -447,16 +449,20 @@
                                     <action selector="previousAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="56m-0e-1le"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XE9-nt-tvi">
-                                <rect key="frame" x="238" y="493" width="103" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                <state key="normal" title="PLAYLIST"/>
-                            </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gX-QL-Xni">
-                                <rect key="frame" x="41" y="493" width="51" height="31"/>
+                                <rect key="frame" x="41" y="489" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAe-Ea-i8V">
+                                <rect key="frame" x="143" y="533" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                <state key="normal" image="play"/>
+                                <connections>
+                                    <action selector="playAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="rhD-e6-K4D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -465,14 +471,17 @@
                     <connections>
                         <outlet property="artistLabel" destination="ThL-pd-7sz" id="ei6-Wz-ewr"/>
                         <outlet property="coverImagePicture" destination="s9g-3T-4LQ" id="Nze-zw-fSs"/>
+                        <outlet property="pauseButton" destination="P9V-Yl-FiL" id="iMB-RM-few"/>
+                        <outlet property="playButton" destination="oAe-Ea-i8V" id="dDb-EV-86V"/>
                         <outlet property="progressBar" destination="KSE-1m-Fg8" id="tCz-jP-adX"/>
                         <outlet property="shuffleSwitch" destination="6gX-QL-Xni" id="uFw-4Z-OtV"/>
+                        <outlet property="stopButton" destination="nTK-B6-ITO" id="fbg-9v-HbC"/>
                         <outlet property="titleLabel" destination="sCv-pn-KrH" id="nEF-zz-2WB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ma9-rY-fec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1084" y="563"/>
+            <point key="canvasLocation" x="-1084" y="562.66866566716647"/>
         </scene>
         <!--Songs-->
         <scene sceneID="wRo-sx-J16">
@@ -536,7 +545,7 @@
         <scene sceneID="cof-AJ-wQ9">
             <objects>
                 <navigationController id="ebf-1m-xw1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Media Player" id="HGT-Ie-iLf"/>
+                    <tabBarItem key="tabBarItem" title="Media Player" image="Media" id="HGT-Ie-iLf"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TpP-I7-5ur">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -588,7 +597,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="ddP-BZ-Ypz"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="ddP-BZ-Ypz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4r-HA-QCh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -620,12 +629,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Calculator" width="25" height="25"/>
+        <image name="Home" width="25" height="25"/>
+        <image name="Media" width="26" height="28"/>
+        <image name="Notes" width="23" height="23"/>
+        <image name="Stopwatch" width="23" height="26"/>
+        <image name="Timer" width="27" height="27"/>
         <image name="back" width="96" height="96"/>
         <image name="fastforward" width="96" height="96"/>
-        <image name="first" width="30" height="30"/>
         <image name="pause" width="96" height="96"/>
+        <image name="play" width="17" height="19"/>
         <image name="rewind" width="96" height="96"/>
-        <image name="second" width="30" height="30"/>
         <image name="skip" width="96" height="96"/>
         <image name="stop" width="96" height="96"/>
         <image name="user" width="2240" height="2240"/>

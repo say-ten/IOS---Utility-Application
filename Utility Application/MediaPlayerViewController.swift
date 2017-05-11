@@ -28,6 +28,9 @@ class MediaPlayerViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var shuffleSwitch: UISwitch!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
     
     var trackId: Int = 0
     var library = MusicLibrary().library
@@ -39,6 +42,7 @@ class MediaPlayerViewController: UIViewController {
         // Do any additional setup after loading the view.
         if let coverImage = library[trackId]["coverImage"]{
             coverImagePicture.image = UIImage(named: "\(coverImage).jpg")
+            playButton.isHidden = true;
         }
         
         //setting labels with library data
@@ -74,6 +78,13 @@ class MediaPlayerViewController: UIViewController {
         if audioPlayer.isPlaying
         {
             progressBar.setProgress(Float(audioPlayer.currentTime/audioPlayer.duration), animated: true)
+            playButton.isHidden = true;
+            pauseButton.isHidden = false;
+        }
+        else
+        {
+            playButton.isHidden = false;
+            pauseButton.isHidden = true;
         }
     }
     
@@ -95,6 +106,7 @@ class MediaPlayerViewController: UIViewController {
     @IBAction func pauseAction(_ sender: AnyObject)
     {
         audioPlayer.pause()
+        
     }
     
     @IBAction func fastForwardAction(_ sender: AnyObject) {
