@@ -13,11 +13,9 @@ import AVFoundation
 //input song details to show in application
 struct MusicLibrary {
     var library = [
-        ["title":"Song 1","artist":"a","index":"0","coverImage":"0"],
-        ["title":"Song 2","artist":"b","index":"1","coverImage":"1"],
-        ["title":"Song 3","artist":"c","index":"2","coverImage":"2"],
-        ["title":"Song 4","artist":"d","index":"3","coverImage":"3"],
-        ["title":"Song 5","artist":"e","index":"4","coverImage":"4"]]
+        ["title":"Open Sesame","artist":"Ross Gregor","index":"0","coverImage":"0"],
+        ["title":"Song Acid","artist":"DJ Sona","index":"1","coverImage":"1"],
+        ["title":"Chords of Heaven","artist":"John Smith","index":"2","coverImage":"2"],]
 }
 
 class MediaPlayerViewController: UIViewController {
