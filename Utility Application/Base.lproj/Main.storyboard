@@ -260,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-497.00149925037488"/>
+            <point key="canvasLocation" x="493" y="-498"/>
         </scene>
         <!--Timer-->
         <scene sceneID="J9H-kn-AYj">
@@ -326,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MBr-7t-ZGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1445.5999999999999" y="-497.00149925037488"/>
+            <point key="canvasLocation" x="983" y="-499"/>
         </scene>
         <!--Notes-->
         <scene sceneID="fKm-KJ-1LM">
@@ -346,7 +346,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5u-dY-VS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2134" y="-159"/>
+            <point key="canvasLocation" x="983" y="295"/>
         </scene>
         <!--Stopwatch-->
         <scene sceneID="wg7-f3-ORb">
@@ -365,12 +365,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="169"/>
+            <point key="canvasLocation" x="518" y="295"/>
         </scene>
-        <!--Media Player-->
+        <!--Media Player View Controller-->
         <scene sceneID="fnd-Bv-X7o">
             <objects>
-                <viewController id="BlO-Qd-lhI" sceneMemberID="viewController">
+                <viewController id="BlO-Qd-lhI" customClass="MediaPlayerViewController" customModule="Utility_Application" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cY2-qD-pIa"/>
                         <viewControllerLayoutGuide type="bottom" id="Vaz-IJ-u8U"/>
@@ -378,14 +378,177 @@
                     <view key="view" contentMode="scaleToFill" id="j5j-Hs-y0I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s9g-3T-4LQ">
+                                <rect key="frame" x="41" y="65" width="300" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KSE-1m-Fg8">
+                                <rect key="frame" x="41" y="387" width="300" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCv-pn-KrH">
+                                <rect key="frame" x="16" y="404" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ThL-pd-7sz">
+                                <rect key="frame" x="16" y="436" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDs-lj-8Go">
+                                <rect key="frame" x="91" y="533" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="rewind"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9V-Yl-FiL">
+                                <rect key="frame" x="141" y="533" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="pause"/>
+                                <connections>
+                                    <action selector="playAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="aPh-Zz-XH3"/>
+                                    <action selector="rewindAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="WZd-w1-wd4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTK-B6-ITO">
+                                <rect key="frame" x="191" y="533" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="stop"/>
+                                <connections>
+                                    <action selector="stopAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="Vjs-Ka-QDo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzc-Pn-Zyh">
+                                <rect key="frame" x="291" y="533" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="skip"/>
+                                <connections>
+                                    <action selector="nextAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="ORW-jh-BJh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nG-on-jNp">
+                                <rect key="frame" x="241" y="533" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="fastforward"/>
+                                <connections>
+                                    <action selector="fastForwardAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="GAn-Is-60b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYn-T4-Z1q">
+                                <rect key="frame" x="41" y="533" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="back"/>
+                                <connections>
+                                    <action selector="previousAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="56m-0e-1le"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XE9-nt-tvi">
+                                <rect key="frame" x="238" y="493" width="103" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <state key="normal" title="PLAYLIST"/>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gX-QL-Xni">
+                                <rect key="frame" x="41" y="493" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Media Player" id="MW5-7w-Lcc"/>
+                    <navigationItem key="navigationItem" id="xcX-Ki-O2d" userLabel="Media Player"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="artistLabel" destination="ThL-pd-7sz" id="ei6-Wz-ewr"/>
+                        <outlet property="coverImagePicture" destination="s9g-3T-4LQ" id="Nze-zw-fSs"/>
+                        <outlet property="progressBar" destination="KSE-1m-Fg8" id="tCz-jP-adX"/>
+                        <outlet property="shuffleSwitch" destination="6gX-QL-Xni" id="uFw-4Z-OtV"/>
+                        <outlet property="titleLabel" destination="sCv-pn-KrH" id="nEF-zz-2WB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ma9-rY-fec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1446" y="169"/>
+            <point key="canvasLocation" x="-1084" y="563"/>
+        </scene>
+        <!--Songs-->
+        <scene sceneID="wRo-sx-J16">
+            <objects>
+                <tableViewController id="lsQ-82-K9i" customClass="TableViewController" customModule="Utility_Application" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="0hn-ew-rVP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Song" rowHeight="100" id="DeK-Sj-ToV" customClass="SongTableViewCell" customModule="Utility_Application" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DeK-Sj-ToV" id="k62-vW-7ay">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MhK-ay-aCU">
+                                            <rect key="frame" x="8" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyl-Ww-YG8">
+                                            <rect key="frame" x="133" y="8" width="200" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NY-V8-oQe">
+                                            <rect key="frame" x="133" y="35" width="200" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="artistLabel" destination="0NY-V8-oQe" id="h2B-OO-u8X"/>
+                                    <outlet property="coverImagePicture" destination="MhK-ay-aCU" id="1ON-Mq-9F8"/>
+                                    <outlet property="titleLabel" destination="fyl-Ww-YG8" id="0S2-1h-0NO"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lsQ-82-K9i" id="aLk-bu-tZU"/>
+                            <outlet property="delegate" destination="lsQ-82-K9i" id="rko-gc-jwE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Songs" id="YI7-Jo-0am"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="BlO-Qd-lhI" kind="push" identifier="Player" id="5PX-es-h4c"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="slJ-rt-T1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-582" y="563"/>
+        </scene>
+        <!--Media Player-->
+        <scene sceneID="cof-AJ-wQ9">
+            <objects>
+                <navigationController id="ebf-1m-xw1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Media Player" id="HGT-Ie-iLf"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TpP-I7-5ur">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lsQ-82-K9i" kind="relationship" relationship="rootViewController" id="btN-Qs-vyg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fj6-0t-6w9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-81" y="563"/>
         </scene>
         <!--Home-->
         <scene sceneID="gET-JV-uXr">
@@ -430,7 +593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4r-HA-QCh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-653.60000000000002" y="-159.67016491754123"/>
+            <point key="canvasLocation" x="-446" y="-159"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -445,10 +608,10 @@
                     <connections>
                         <segue destination="os0-54-gec" kind="relationship" relationship="viewControllers" id="Ovj-cO-CoH"/>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="5Dg-Tk-rVw" kind="relationship" relationship="viewControllers" id="fSb-5e-mb4"/>
-                        <segue destination="BlO-Qd-lhI" kind="relationship" relationship="viewControllers" id="5MF-Iq-Z7o"/>
+                        <segue destination="ebf-1m-xw1" kind="relationship" relationship="viewControllers" id="N91-J2-I77"/>
                         <segue destination="crH-3O-N7g" kind="relationship" relationship="viewControllers" id="uSU-tZ-Ygh"/>
+                        <segue destination="5Dg-Tk-rVw" kind="relationship" relationship="viewControllers" id="fSb-5e-mb4"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -457,8 +620,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="96" height="96"/>
+        <image name="fastforward" width="96" height="96"/>
         <image name="first" width="30" height="30"/>
+        <image name="pause" width="96" height="96"/>
+        <image name="rewind" width="96" height="96"/>
         <image name="second" width="30" height="30"/>
+        <image name="skip" width="96" height="96"/>
+        <image name="stop" width="96" height="96"/>
         <image name="user" width="2240" height="2240"/>
     </resources>
 </document>
