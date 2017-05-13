@@ -20,11 +20,14 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
-    var list = ["Your input gets put in here"]
+    //variables for notes
+    var list = ["Your input gets put in here", "Swipe left to delete"]
     
+    //linked outlets
     @IBOutlet weak var textInput: UITextField!
     @IBOutlet weak var listTableView: UITableView!
     
+    //function to add what is written in textinput to table
     @IBAction func AddButton(_ sender: Any)
     {
         if (textInput.text != "")
@@ -47,6 +50,7 @@ class NotesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return(cell)
     }
     
+    //implements the swipe to delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     {
         if editingStyle == UITableViewCellEditingStyle.delete
