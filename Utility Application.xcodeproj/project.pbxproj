@@ -34,7 +34,7 @@
 		CE21BACF1EC46F02007AE76B /* 0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 0.mp3; sourceTree = "<group>"; };
 		CE21BAD01EC46F02007AE76B /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
 		CE21BAD71EC4709E007AE76B /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
-		CE459C501EB7258700A0BE74 /* Utility Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Utility Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE459C501EB7258700A0BE74 /* Utility Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Utility Application.app"; path = "/Users/user/Desktop/ios-utility-application/build/Debug-iphoneos/Utility Application.app"; sourceTree = "<absolute>"; };
 		CE459C531EB7258700A0BE74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE459C551EB7258700A0BE74 /* StopwatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
 		CE459C571EB7258700A0BE74 /* MediaPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlayerViewController.swift; sourceTree = "<group>"; };
@@ -65,16 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				CE459C521EB7258700A0BE74 /* Utility Application */,
-				CE459C511EB7258700A0BE74 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		CE459C511EB7258700A0BE74 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CE459C501EB7258700A0BE74 /* Utility Application.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		CE459C521EB7258700A0BE74 /* Utility Application */ = {
@@ -148,7 +139,7 @@
 				Base,
 			);
 			mainGroup = CE459C471EB7258700A0BE74;
-			productRefGroup = CE459C511EB7258700A0BE74 /* Products */;
+			productRefGroup = CE459C471EB7258700A0BE74;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

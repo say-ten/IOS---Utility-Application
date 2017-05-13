@@ -422,45 +422,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khl-uC-c2y">
-                                <rect key="frame" x="0.0" y="58" width="375" height="121"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="121"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="90"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="85"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19I-C9-8GB">
-                                <rect key="frame" x="238" y="191" width="85" height="85"/>
+                                <rect key="frame" x="225" y="169" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start" image="Lap">
+                                <state key="normal" title="Lap" image="Lap">
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="lapReset:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="VIg-HG-lDB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWZ-Yi-g6j">
-                                <rect key="frame" x="54" y="191" width="85" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="Start">
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="startStop:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="qBY-BC-iWD"/>
+                                    <action selector="lapReset:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="b2H-pZ-87a"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lSq-Yx-Rld">
                                 <rect key="frame" x="0.0" y="288" width="375" height="330"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="u2e-kf-2AT"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="TDD-U8-yTh"/>
+                                </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWZ-Yi-g6j">
+                                <rect key="frame" x="50" y="169" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start" image="Start">
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStop:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="qBY-BC-iWD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stopwatch" image="Stopwatch" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="lapResetButton" destination="19I-C9-8GB" id="LAh-Fq-g4h"/>
-                        <outlet property="lapTableView" destination="lSq-Yx-Rld" id="5xu-gC-C1s"/>
+                        <outlet property="lapTableView" destination="lSq-Yx-Rld" id="wzm-vB-reK"/>
                         <outlet property="startStopButton" destination="KWZ-Yi-g6j" id="E0w-H3-sZQ"/>
                         <outlet property="stopwatchLabel" destination="Khl-uC-c2y" id="Kxy-5a-XCH"/>
                     </connections>
@@ -502,7 +506,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDs-lj-8Go">
                                 <rect key="frame" x="91" y="533" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="rewind"/>
+                                <state key="normal" title="Rewind Button" image="Rewind"/>
                                 <connections>
                                     <action selector="rewindAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="gtp-Iu-lr9"/>
                                 </connections>
@@ -510,7 +514,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9V-Yl-FiL">
                                 <rect key="frame" x="141" y="533" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="pause"/>
+                                <state key="normal" title="Pause" image="Pause"/>
                                 <connections>
                                     <action selector="pauseAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="XP7-CF-pvy"/>
                                 </connections>
@@ -518,7 +522,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTK-B6-ITO">
                                 <rect key="frame" x="191" y="533" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="stop"/>
+                                <state key="normal" backgroundImage="Stop"/>
                                 <connections>
                                     <action selector="stopAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="Vjs-Ka-QDo"/>
                                 </connections>
@@ -526,7 +530,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzc-Pn-Zyh">
                                 <rect key="frame" x="291" y="533" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="skip"/>
+                                <state key="normal" title="Skip Button" image="Skip"/>
                                 <connections>
                                     <action selector="nextAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="ORW-jh-BJh"/>
                                 </connections>
@@ -534,7 +538,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nG-on-jNp">
                                 <rect key="frame" x="241" y="533" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="fastforward"/>
+                                <state key="normal" title="Fastforward Button" image="Fastforward"/>
                                 <connections>
                                     <action selector="fastForwardAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="GAn-Is-60b"/>
                                 </connections>
@@ -542,13 +546,13 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYn-T4-Z1q">
                                 <rect key="frame" x="41" y="533" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="back"/>
+                                <state key="normal" title="Back Button" image="Back"/>
                                 <connections>
                                     <action selector="previousAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="56m-0e-1le"/>
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gX-QL-Xni">
-                                <rect key="frame" x="41" y="485" width="51" height="31"/>
+                                <rect key="frame" x="42" y="485" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </switch>
@@ -556,7 +560,7 @@
                                 <rect key="frame" x="143" y="533" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
-                                <state key="normal" image="play"/>
+                                <state key="normal" image="Play"/>
                                 <connections>
                                     <action selector="playAction:" destination="BlO-Qd-lhI" eventType="touchUpInside" id="rhD-e6-K4D"/>
                                 </connections>
@@ -565,6 +569,11 @@
                                 <rect key="frame" x="37" y="89" width="300" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSQ-vG-zrn">
+                                <rect key="frame" x="101" y="481" width="35" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Shuffle Icon" image="Shuffle"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -685,19 +694,20 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Back" width="96" height="96"/>
         <image name="Calculator" width="25" height="25"/>
+        <image name="Fastforward" width="96" height="96"/>
         <image name="Lap" width="250" height="250"/>
         <image name="Media" width="26" height="28"/>
         <image name="Notes" width="23" height="23"/>
+        <image name="Pause" width="96" height="96"/>
+        <image name="Play" width="17" height="19"/>
+        <image name="Rewind" width="96" height="96"/>
+        <image name="Shuffle" width="64" height="64"/>
+        <image name="Skip" width="96" height="96"/>
         <image name="Start" width="250" height="250"/>
+        <image name="Stop" width="96" height="96"/>
         <image name="Stopwatch" width="23" height="26"/>
         <image name="Timer" width="27" height="27"/>
-        <image name="back" width="96" height="96"/>
-        <image name="fastforward" width="96" height="96"/>
-        <image name="pause" width="96" height="96"/>
-        <image name="play" width="17" height="19"/>
-        <image name="rewind" width="96" height="96"/>
-        <image name="skip" width="96" height="96"/>
-        <image name="stop" width="96" height="96"/>
     </resources>
 </document>
