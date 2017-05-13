@@ -20,13 +20,16 @@ class CalculatorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //variables for calculator
     var calculate = false
     var displayNumber:Double = 0;
     var lastNumber:Double = 0;
     var function = 0;
     
+    //linked outlet items
     @IBOutlet weak var label: UILabel!
     
+    //function to tell which number was pressed then send to label
     @IBAction func numbers(_ sender: UIButton)
     {
         if calculate == true
@@ -42,6 +45,7 @@ class CalculatorViewController: UIViewController {
         }
     }
     
+    //checks current numbers in label then sends the calculation funtions
     @IBAction func functions(_ sender: UIButton)
     {
         if label.text != "" && sender.tag != 11 && sender.tag != 16
@@ -68,6 +72,7 @@ class CalculatorViewController: UIViewController {
             function = sender.tag
             calculate = true;
         }
+        //equal button - calculates the numbers with the previously pressed function
         else if sender.tag == 16
         {
             if function == 12
@@ -87,6 +92,7 @@ class CalculatorViewController: UIViewController {
                 label.text = String(lastNumber + displayNumber)
             }
         }
+        //AC button - clears view as well as previous numbers
         else if sender.tag == 11
         {
             label.text = "";
