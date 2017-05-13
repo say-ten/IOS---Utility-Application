@@ -21,6 +21,7 @@ class StopwatchViewController: UIViewController, UITableViewDelegate, UITableVie
         // Dispose of any resources that can be recreated.
     }
     
+    //variables for stopwatch
     var laps: [String] = []
     var timer = Timer()
     var minutes: Int = 0
@@ -30,11 +31,13 @@ class StopwatchViewController: UIViewController, UITableViewDelegate, UITableVie
     var startStopTime: Bool = true
     var addLap: Bool = false
     
+    //linked outlets
     @IBOutlet weak var stopwatchLabel: UILabel!
     @IBOutlet weak var lapTableView: UITableView!
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var lapResetButton: UIButton!
     
+    //function to start and top timer on button press as well as change between the 2 buttons
     @IBAction func startStop(_ sender: AnyObject) {
         if startStopTime == true {
             timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(StopwatchViewController.updateStopwatch), userInfo: nil, repeats: true)
@@ -52,6 +55,7 @@ class StopwatchViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    //function to save current stopwatch time into table view and reset timer
     @IBAction func lapReset(_ sender: AnyObject) {
         if addLap == true {
             laps.insert(stopwatchString, at: 0)
@@ -70,6 +74,7 @@ class StopwatchViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    //function to update stopwatch counting time
     func updateStopwatch() {
         fractions += 1
         if fractions == 100 {
@@ -89,6 +94,7 @@ class StopwatchViewController: UIViewController, UITableViewDelegate, UITableVie
         stopwatchLabel.text = stopwatchString
     }
     
+    //function to display lap time into tables
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Cell")
         cell.backgroundColor = self.view.backgroundColor
