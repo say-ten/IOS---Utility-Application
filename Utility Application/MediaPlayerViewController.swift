@@ -66,11 +66,13 @@ class MediaPlayerViewController: UIViewController {
         }
     }
     
+    //stops the music when the view changes
     override func viewWillDisappear(_ animated: Bool)
     {
         audioPlayer.stop()
     }
     
+    //displays current song progress on a progress bar out of 100%
     func updateProgressBar()
     {
         if audioPlayer.isPlaying
@@ -86,6 +88,7 @@ class MediaPlayerViewController: UIViewController {
         }
     }
     
+    //starts/continue playing the song
     @IBAction func playAction(_ sender: AnyObject)
     {
         if !audioPlayer.isPlaying {
@@ -93,20 +96,21 @@ class MediaPlayerViewController: UIViewController {
         }
     }
     
+    //stops playing the song
     @IBAction func stopAction(_ sender: AnyObject)
     {
         audioPlayer.stop()
         audioPlayer.currentTime = 0
         progressBar.progress = 0
-    }
+    }    
     
-    
+    //pauses the current song
     @IBAction func pauseAction(_ sender: AnyObject)
     {
         audioPlayer.pause()
-        
     }
     
+    //skips an interval in current song
     @IBAction func fastForwardAction(_ sender: AnyObject) {
         var time: TimeInterval = audioPlayer.currentTime
         time += 5.0
@@ -120,6 +124,7 @@ class MediaPlayerViewController: UIViewController {
         }
     }
     
+    //backtracks an interval in the current song
     @IBAction func rewindAction(_ sender: AnyObject) {
         var time: TimeInterval = audioPlayer.currentTime
         time -= 5.0
@@ -132,7 +137,8 @@ class MediaPlayerViewController: UIViewController {
             audioPlayer.currentTime = time
         }
     }
-        
+    
+    //goes back to beginning of the song
     @IBAction func previousAction(_ sender: AnyObject)
     {
         if trackId != 0 || trackId > 0
@@ -174,6 +180,7 @@ class MediaPlayerViewController: UIViewController {
         }
     }
     
+    //skips to the next song
     @IBAction func nextAction(_ sender: AnyObject)
     {
         if trackId == 0 || trackId < 4
