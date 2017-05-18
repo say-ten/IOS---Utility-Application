@@ -16,11 +16,12 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    //table view artist, title and cover image data
+    //tableview for artist, title and cover image data
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return library.count
     }
     
+    //override tableview with cell data
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Song") as! SongTableViewCell
         cell.artistLabel.text = library[indexPath.row]["artist"]
